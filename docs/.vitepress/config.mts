@@ -14,18 +14,144 @@ export default defineConfig({
     lineNumbers: true,
   },
 
+  locales: {
+    root: {
+      label: '简体中文',
+      lang: 'zh-CN',
+    },
+    en: {
+      label: 'English',
+      lang: 'en-US',
+      themeConfig: {
+        nav: [
+          { text: 'Home', link: '/en/', activeMatch: '^/en/$' },
+          { text: 'Guide', link: '/en/guide/quick-start' },
+          { text: 'Usage', link: '/en/usage/cli' },
+          { text: 'Features', link: '/en/features/' },
+          { text: 'Project Structure', link: '/en/project-structure' },
+          { text: 'Test Report', link: '/en/test-report' },
+          { text: 'About', link: '/en/about' },
+          {
+            text: '🌐',
+            items: [
+              { text: '简体中文', link: '/' },
+              { text: 'English', link: '/en/' },
+            ],
+          },
+        ],
+        sidebar: {
+          '/en/guide/': [
+            {
+              text: 'Guide',
+              items: [
+                { text: 'Introduction', link: '/en/guide/introduction' },
+                { text: 'Quick Start', link: '/en/guide/quick-start' },
+                { text: 'Build from Source', link: '/en/guide/build' },
+                { text: 'AI Related', link: '/en/guide/ai' },
+              ],
+            },
+          ],
+          '/en/usage/': [
+            {
+              text: 'Usage',
+              items: [
+                { text: 'CLI Mode', link: '/en/usage/cli' },
+                { text: 'TUI Mode', link: '/en/usage/tui' },
+                { text: 'Update Scheduling', link: '/en/usage/update-scheduler' },
+                { text: 'Multi-language', link: '/en/usage/multi-language' },
+                { text: 'AI Commands', link: '/en/usage/ai-commands' },
+                { text: 'Article Archiving', link: '/en/usage/archive' },
+                { text: 'Full-Text Fetch', link: '/en/usage/full-text-fetch' },
+              ],
+            },
+          ],
+          '/en/features/': [
+            {
+              text: 'Features',
+              items: [
+                { text: 'Overview', link: '/en/features/' },
+                { text: 'Smart Archiving', link: '/en/features/archive' },
+                { text: 'Assisted Reading', link: '/en/features/reading' },
+                { text: 'AI Friendly', link: '/en/features/ai' },
+                { text: 'Telemetry & Privacy', link: '/en/features/telemetry' },
+                { text: 'Roadmap', link: '/en/features/roadmap' },
+              ],
+            },
+          ],
+        },
+        outline: {
+          level: [2, 3],
+          label: 'On this page',
+        },
+        docFooter: {
+          prev: 'Previous',
+          next: 'Next',
+        },
+        lastUpdated: {
+          text: 'Last updated on',
+          formatOptions: { dateStyle: 'medium', timeStyle: 'short' },
+        },
+        editLink: {
+          pattern: 'https://github.com/hahahotsoup/sip-wiki/edit/main/docs/:path',
+          text: 'Edit this page on GitHub',
+        },
+        footer: {
+          message: 'Released under the GNU General Public License v3.0 (GPL-3.0)',
+          copyright: '© 2026 hahahotsoup with <3',
+        },
+      },
+    },
+  },
+
   themeConfig: {
     search: {
       provider: 'local',
+      options: {
+        locales: {
+          root: {
+            translations: {
+              button: { buttonText: '搜索文档', buttonAriaLabel: '搜索文档' },
+              modal: {
+                noResultsText: '无法找到相关结果',
+                resetButtonTitle: '清除查询条件',
+                footer: {
+                  selectText: '选择',
+                  navigateText: '切换',
+                },
+              },
+            },
+          },
+          en: {
+            translations: {
+              button: { buttonText: 'Search', buttonAriaLabel: 'Search' },
+              modal: {
+                noResultsText: 'No results found',
+                resetButtonTitle: 'Clear search conditions',
+                footer: {
+                  selectText: 'to select',
+                  navigateText: 'to navigate',
+                },
+              },
+            },
+          },
+        },
+      },
     },
     nav: [
-      { text: '首页', link: '/' },
+      { text: '首页', link: '/', activeMatch: '^/$' },
       { text: '指南', link: '/指南/快速开始' },
       { text: '使用说明', link: '/使用说明/命令行' },
       { text: '功能', link: '/功能/' },
       { text: '项目结构', link: '/项目结构' },
       { text: '测试报告', link: '/测试报告' },
       { text: '关于', link: '/关于' },
+      {
+        text: '🌐',
+        items: [
+          { text: '简体中文', link: '/' },
+          { text: 'English', link: '/en/' },
+        ],
+      },
     ],
     sidebar: {
       '/指南/': [
