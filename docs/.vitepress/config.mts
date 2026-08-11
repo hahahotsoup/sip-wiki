@@ -3,7 +3,6 @@ import { teekConfig } from './teek-config.mts'
 
 export default defineConfig({
   extends: teekConfig,
-  base: '/sip-wiki/',
   cleanUrls: true,
   lang: 'zh-CN',
   title: 'sip',

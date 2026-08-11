@@ -61,7 +61,7 @@ git push origin fix/your-branch
 ## 分支与发布
 
 - `main` 分支为发布分支，任何改动以 PR 合并
-- 合并到 `main` 后，GitHub Actions 自动构建并部署到 GitHub Pages
+- 合并到 `main` 后，**Cloudflare Pages** 自动检测并构建部署（也可在 CF Dashboard 手动触发）
 
 ## 问题与讨论
 
