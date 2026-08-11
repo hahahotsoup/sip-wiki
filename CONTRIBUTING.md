@@ -70,7 +70,7 @@ git push origin fix/your-branch
 2. 在仓库 **Settings → Secrets and variables → Actions** 添加：
    - `CLOUDFLARE_API_TOKEN`（Cloudflare Dashboard 生成的 API Token，权限含 Pages:Edit）
    - `CLOUDFLARE_ACCOUNT_ID`（Cloudflare Dashboard 首页右侧的账户 ID）
-3. 确认 Cloudflare Pages 项目名为 `sip-wiki`（或修改 `ci.yml` 里的 `projectName`）。
+3. 确认 Cloudflare Pages 项目名为 `sip`（或修改 `ci.yml` 里的 `projectName`）。
 
 ## 问题与讨论
 

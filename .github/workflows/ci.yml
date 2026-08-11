@@ -53,6 +53,6 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: sip-wiki
+          projectName: sip
           directory: dist
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
