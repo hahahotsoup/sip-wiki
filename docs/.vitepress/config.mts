@@ -176,6 +176,7 @@ export default defineConfig({
             { text: 'AI 命令', link: '/使用说明/AI命令' },
             { text: '文章归档', link: '/使用说明/归档' },
             { text: '全文抓取', link: '/使用说明/全文抓取' },
+            { text: 'Bot 接入', link: '/使用说明/Bot接入' },
           ],
         },
       ],
