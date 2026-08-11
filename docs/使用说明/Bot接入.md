@@ -2,7 +2,7 @@
 
 > 让 sip 成为一个「会说话的助手」：通过本地 AI Agent（**OpenClaw**，或用 **Cherry Studio**），把 sip 挂到 QQ、微信、Discord、Telegram 上——你在群里 @ 它，它用 `sip` 的检索/摘要能力，只从你信任的源回答问题。
 >
-> **英文版**：[English](./Bot接入.en.html) · 官方文档：[OpenClaw](https://docs.openclaw.ai) · [Cherry Studio](https://cherry-ai.com)
+> **英文版**：[English](/en/usage/bot-integration.html) · 官方文档：[OpenClaw](https://docs.openclaw.ai) · [Cherry Studio](https://cherry-ai.com)
 
 ---
 

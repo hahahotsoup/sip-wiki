@@ -62,6 +62,7 @@ export default defineConfig({
                 { text: 'AI Commands', link: '/en/usage/ai-commands' },
                 { text: 'Article Archiving', link: '/en/usage/archive' },
                 { text: 'Full-Text Fetch', link: '/en/usage/full-text-fetch' },
+                { text: 'Bot Integration', link: '/en/usage/bot-integration' },
               ],
             },
           ],
