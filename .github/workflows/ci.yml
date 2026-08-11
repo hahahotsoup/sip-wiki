@@ -1,9 +1,8 @@
 name: CI
 
+# 仅作为 PR 构建门禁（审核合并由 Cloudflare git 集成负责部署）
 on:
   pull_request:
-    branches: [main]
-  push:
     branches: [main]
 
 concurrency:
@@ -28,31 +27,3 @@ jobs:
 
       - name: Build docs
         run: npm run build
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: dist
-          path: docs/.vitepress/dist
-          if-no-files-found: error
-
-  # 仅在 main 分支推送（即 PR 被审核合并后）时部署到 Cloudflare Pages
-  deploy:
-    needs: build
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: dist
-          path: dist
-
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: sip
-          directory: dist
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
