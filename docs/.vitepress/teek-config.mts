@@ -15,4 +15,24 @@ export const teekConfig = defineTeekConfig({
   author: {
     name: 'sip',
   },
+
+  comment: {
+    provider: 'giscus',
+    options: {
+      repo: 'hahahotsoup/sip-wiki',
+      repoId: 'R_kgDOT0yLsA',
+      category: 'Announcements',
+      categoryId: 'DIC_kwDOT0yLsM4DDIwu',
+      mapping: 'pathname',
+      strict: '0',
+      reactionsEnabled: '1',
+      emitMetadata: '0',
+      inputPosition: 'top',
+      theme: 'preferred_color_scheme',
+      lang: 'zh-CN',
+      loading: 'lazy',
+      useOnline: true,
+      link: 'https://giscus.app/client.js',
+    },
+  },
 })
