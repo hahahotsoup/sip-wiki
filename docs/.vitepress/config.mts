@@ -31,13 +31,6 @@ export default defineConfig({
           { text: 'Project Structure', link: '/en/project-structure' },
           { text: 'Test Report', link: '/en/test-report' },
           { text: 'About', link: '/en/about' },
-          {
-            text: '🌐',
-            items: [
-              { text: '简体中文', link: '/' },
-              { text: 'English', link: '/en/' },
-            ],
-          },
         ],
         sidebar: {
           '/en/guide/': [
@@ -146,13 +139,6 @@ export default defineConfig({
       { text: '项目结构', link: '/项目结构' },
       { text: '测试报告', link: '/测试报告' },
       { text: '关于', link: '/关于' },
-      {
-        text: '🌐',
-        items: [
-          { text: '简体中文', link: '/' },
-          { text: 'English', link: '/en/' },
-        ],
-      },
     ],
     sidebar: {
       '/指南/': [
