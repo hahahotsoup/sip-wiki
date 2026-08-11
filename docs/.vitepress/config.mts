@@ -3,7 +3,6 @@ import { teekConfig } from './teek-config.mts'
 
 export default defineConfig({
   extends: teekConfig,
-  cleanUrls: true,
   lang: 'zh-CN',
   title: 'sip',
   description: '本地优先的透明信息过滤器与阅读辅助器——只读你信任的内容',
