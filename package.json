@@ -1,0 +1,16 @@
+{
+  "name": "sip-docs",
+  "version": "1.0.0",
+  "description": "sip 官方文档站（VitePress）",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "vitepress": "^1.6.4",
+    "vitepress-theme-teek": "^1.6.2"
+  }
+}
