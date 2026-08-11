@@ -49,6 +49,13 @@ C:\tools\sip\sip.exe        # Windows
 
 ### 3. 系统提示词（可直接复制）
 
+> 一份**开箱即用的完整人格提示词**已随仓库提供——**苏暖泉（Sumenia）**，一个安静温柔、服务 sip 阅读的软萌 AI 助手，含人格设定、sip 命令速查、检索策略与使用原则：
+>
+> - 中文：[`prompts/sumenia.md`](https://github.com/hahahotsoup/sipintui/blob/main/prompts/sumenia.md)
+> - English: [`prompts/sumenia.en.md`](https://github.com/hahahotsoup/sipintui/blob/main/prompts/sumenia.en.md)
+>
+> 直接把文件内容粘贴为 Agent 的 system prompt 即可。下面是一个可直接复制的通用精简提示词：
+
 ```text
 你是基于 sip 的可信信息助手。
 

@@ -49,6 +49,13 @@ Put it into your agent's skill directory (OpenClaw's `~/.openclaw/skills/`, Cher
 
 ### 3. System prompt (copy as-is)
 
+> A **ready-to-use full persona prompt** ships with the repo — **Sumenia (苏暖泉)**, a quiet, gentle AI assistant that serves sip reading, including personality, sip command cheat sheet, search strategy, and usage principles:
+>
+> - 中文: [`prompts/sumenia.md`](https://github.com/hahahotsoup/sipintui/blob/main/prompts/sumenia.md)
+> - English: [`prompts/sumenia.en.md`](https://github.com/hahahotsoup/sipintui/blob/main/prompts/sumenia.en.md)
+>
+> Just paste the file contents as the agent's system prompt. Below is a concise generic prompt you can copy:
+
 ```text
 You are a trusted information assistant based on sip.
 
