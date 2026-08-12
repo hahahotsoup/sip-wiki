@@ -4,7 +4,7 @@ layout: home
 hero:
   name: sip
   text: Your information, your history, your judgment
-  tagline: A local-first personal information hub â€” collect, preserve, track, filter, use. Five things that put you back in control of your information input.
+  tagline: Savor it, sip it slow
   actions:
     - theme: brand
       text: Quick Start
@@ -59,4 +59,4 @@ Want to dig deeper: [How sip compares to other readers](/en/guide/competitors) Â
 
 > sip is not a product chasing "daily active users" and "time on site". It pursues this:
 >
-> **When you open sip, you know what you read today is trustworthy; when your AI calls sip, you know the sources it cites are reliable.**
+> **When you open sip, you know what you're reading, where it comes from, and whether it has changed; when your AI calls sip, you know it can only look for answers in the sources you chose.**
