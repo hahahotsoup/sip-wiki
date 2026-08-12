@@ -37,8 +37,10 @@ export default defineConfig({
             {
               text: 'Guide',
               items: [
-                { text: 'Introduction', link: '/en/guide/introduction' },
                 { text: 'Quick Start', link: '/en/guide/quick-start' },
+                { text: 'Practical Scenarios', link: '/en/guide/practical-scenarios' },
+                { text: 'Competitors', link: '/en/guide/competitors' },
+                { text: 'Introduction', link: '/en/guide/introduction' },
                 { text: 'Build from Source', link: '/en/guide/build' },
                 { text: 'AI Related', link: '/en/guide/ai' },
               ],
@@ -69,6 +71,17 @@ export default defineConfig({
                 { text: 'AI Friendly', link: '/en/features/ai' },
                 { text: 'Telemetry & Privacy', link: '/en/features/telemetry' },
                 { text: 'Roadmap', link: '/en/features/roadmap' },
+              ],
+            },
+          ],
+          '/en/': [
+            {
+              text: 'Reference',
+              items: [
+                { text: 'Project Structure', link: '/en/project-structure' },
+                { text: 'Test Report (2026-08-12 Final)', link: '/en/sip-test-report-2026-08-12-final' },
+                { text: 'Test Report', link: '/en/test-report' },
+                { text: 'About', link: '/en/about' },
               ],
             },
           ],
@@ -133,52 +146,57 @@ export default defineConfig({
     },
     nav: [
       { text: '首页', link: '/', activeMatch: '^/$' },
-      { text: '指南', link: '/指南/快速开始' },
-      { text: '使用说明', link: '/使用说明/命令行' },
-      { text: '功能', link: '/功能/' },
-      { text: '概念', link: '/概念' },
-      { text: '更新日志', link: '/更新日志' },
+      { text: '了解', link: '/了解/介绍', activeMatch: '^/了解/' },
+      { text: '上手', link: '/上手/快速开始', activeMatch: '^/上手/' },
+      { text: '使用', link: '/使用/CLI', activeMatch: '^/使用/' },
+      { text: '参考', link: '/参考/功能', activeMatch: '^/参考/' },
       { text: '项目结构', link: '/项目结构' },
       { text: '测试报告', link: '/测试报告' },
       { text: '关于', link: '/关于' },
     ],
     sidebar: {
-      '/指南/': [
+      '/了解/': [
         {
-          text: '指南',
+          text: '了解',
           items: [
-            { text: '介绍', link: '/指南/介绍' },
-            { text: '快速开始', link: '/指南/快速开始' },
-            { text: '从源码构建', link: '/指南/构建' },
-            { text: 'AI 相关', link: '/指南/AI' },
+            { text: '介绍', link: '/了解/介绍' },
+            { text: '竞品对比', link: '/了解/竞品对比' },
+            { text: '概念', link: '/了解/概念' },
           ],
         },
       ],
-      '/使用说明/': [
+      '/上手/': [
         {
-          text: '使用说明',
+          text: '上手',
           items: [
-            { text: 'CLI 模式', link: '/使用说明/命令行' },
-            { text: 'TUI 模式', link: '/使用说明/TUI' },
-            { text: '更新调度', link: '/使用说明/更新调度' },
-            { text: '多语言', link: '/使用说明/多语言' },
-            { text: 'AI 命令', link: '/使用说明/AI命令' },
-            { text: '文章归档', link: '/使用说明/归档' },
-            { text: '全文抓取', link: '/使用说明/全文抓取' },
-            { text: 'Bot 接入', link: '/使用说明/Bot接入' },
+            { text: '快速开始', link: '/上手/快速开始' },
+            { text: '实战场景', link: '/上手/实战场景' },
           ],
         },
       ],
-      '/功能/': [
+      '/使用/': [
         {
-          text: '功能',
+          text: '使用',
           items: [
-            { text: '功能总览', link: '/功能/' },
-            { text: '智能归档', link: '/功能/归档' },
-            { text: '辅助阅读', link: '/功能/阅读' },
-            { text: 'AI 友好', link: '/功能/AI' },
-            { text: 'Telemetry 与隐私', link: '/功能/遥测' },
-            { text: '规划中', link: '/功能/规划' },
+            { text: 'CLI', link: '/使用/CLI' },
+            { text: 'TUI', link: '/使用/TUI' },
+            { text: 'AI 命令', link: '/使用/AI' },
+            { text: 'Bot 接入', link: '/使用/Bot' },
+            { text: '更新调度', link: '/使用/调度' },
+            { text: '全文抓取', link: '/使用/全文' },
+            { text: '多语言', link: '/使用/多语言' },
+          ],
+        },
+      ],
+      '/参考/': [
+        {
+          text: '参考',
+          items: [
+            { text: '功能总览', link: '/参考/功能' },
+            { text: '遥测与隐私', link: '/参考/遥测' },
+            { text: '规划中', link: '/参考/规划' },
+            { text: '从源码构建', link: '/参考/构建' },
+            { text: '更新日志', link: '/参考/更新日志' },
           ],
         },
       ],
@@ -187,8 +205,8 @@ export default defineConfig({
           text: '总览',
           items: [
             { text: '首页', link: '/' },
-            { text: '概念总览', link: '/概念' },
-            { text: '更新日志', link: '/更新日志' },
+            { text: '完整测试报告（2026-08-12 最终版）', link: '/sip-测试报告-2026-08-12-最终版' },
+            { text: '第一轮测试报告（2026-08-11）', link: '/sip-测试报告-2026-08-11' },
             { text: '项目结构', link: '/项目结构' },
             { text: '测试报告', link: '/测试报告' },
             { text: '关于', link: '/关于' },

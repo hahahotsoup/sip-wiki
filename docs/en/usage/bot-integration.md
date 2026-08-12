@@ -2,7 +2,7 @@
 
 > Turn sip into a "chatty assistant": via a local AI agent (**OpenClaw**, or **Cherry Studio**), attach sip to QQ, WeChat, Discord, and Telegram — mention it in a group, and it uses sip's search/summary abilities to answer only from sources you trust.
 >
-> **中文版**：[简体中文](/使用说明/Bot接入.html) · Official docs: [OpenClaw](https://docs.openclaw.ai) · [Cherry Studio](https://cherry-ai.com)
+> **中文版**：[简体中文](/使用/Bot.html) · Official docs: [OpenClaw](https://docs.openclaw.ai) · [Cherry Studio](https://cherry-ai.com)
 
 ---
 

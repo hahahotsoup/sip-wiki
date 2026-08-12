@@ -26,6 +26,7 @@
 | `G` | 切换「完整正文 / 文章概要」 |
 | `V` | 查看文章版本/变更历史（标题带 `✎` 标记的文章才有；输入编号可看旧版正文） |
 | `M`（或命令行 `manage`） | 打开「订阅源管理页」：全屏列出所有源，`j/k` 移动、`u` 更新、`a` 归档、`r` 去归档、`x` 删除、`s` 设计划、`d` 加源 |
+| `P`（或命令 `report` / `insights`） | 阅读情况报告页（按源呈现阅读事实，需遥测开启） |
 | `C` | 折叠/展开左侧栏 |
 | `H` | 快捷键帮助 |
 | `F2` | 关于页 |
@@ -52,5 +53,10 @@ y               # 给当前选中文章生成摘要
 init            # AI 配置向导（对话框版）
 index           # 向量化当前选中源
 reindex         # 清空全部向量并重新向量化
+dedup           # 跨源去重（无参 = 交互选择；或 dedup scan|list|undo）
+insights        # 阅读情况报告（同 P 键 / report）
+insights-interval <7d|30d|off>  # 报告定时提醒
+telemetry ...   # 遥测管理（status/show/enable/disable/clear/export）
+config          # 查看 AI 配置
 q               # 退出
 ```

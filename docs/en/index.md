@@ -43,10 +43,6 @@ features:
     link: /en/features/telemetry
 ---
 
-## 📋 Welcome to the Test Report
-
-[Comprehensive sip Test Report (2026-08-11)](/en/sip-test-report-2026-08-11) — 51 functional tests + 30+ boundary/exception injections + security penetration + data volume stress testing + concurrency tests. All 11 defects found in the report were fixed in **v1.0** and re-verified item by item (see [Test Report](/en/test-report)).
-
 ## Quick Start
 
 ```bash
@@ -54,6 +50,12 @@ features:
 ./sip.exe            # Windows: enter TUI (creates readwithhotsoup/ data dir on first launch)
 ./sip.exe --help     # or use the CLI directly
 ```
+
+Want to dig deeper: [How sip compares to other readers](/en/guide/competitors) · [6 practical workflows](/en/guide/practical-scenarios).
+
+## 📋 Welcome to the Test Report
+
+[sip Comprehensive Test Report (2026-08-12 Final)](/en/sip-test-report-2026-08-12-final) — **~230+ tests** across three iterations (v1.0 → v1.1 → v1.1.4), fault injection, stress testing, security penetration. Overall **8.4/10 (A-)**, 22 defects fixed and re-verified, +696 lines with zero regression. Earlier round: [Comprehensive Test Report (2026-08-11)](/en/sip-test-report-2026-08-11) — 51 functional tests + 30+ boundary/exception injections, all 11 defects fixed in **v1.0** (see [Test Report](/en/test-report)).
 
 > sip is not a product chasing "daily active users" and "time on site". It pursues this:
 >

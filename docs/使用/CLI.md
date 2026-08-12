@@ -49,12 +49,17 @@ sip --diff 42 v1 v3 --json   # 指定两个版本，结构化输出 {from, to, c
 | `--today [--json] [--refresh] [--quick N]` | | 今日阅读清单（规则式选文，上限=目标 5 篇；含预估时长与理由）。**一天固定一碗**（当日缓存，新文章当天不自动进清单）；`--refresh` 显式重新生成；要当天新内容可直接 `--grep`/`--show`；开启苏暖泉（Sumenia）后可跟踪完成进度 |
 | `--sync [--feed N] [--json]` | | 只更新「到期」的订阅源（可选 `--feed 编号` 限定单个；`--json` 结构化） |
 | `--update-all` | | 强制更新所有订阅源（等价 TUI 的 `F6`） |
-| `--schedule <编号> <表达式>` | | 设置某源更新计划（详见 [更新调度](/使用说明/更新调度)）：`30m` / `1h` / `7d` / `daily@10:00` / `weekly@Mon 08:00` / `manual` |
-| `--purge-fulltext [编号]` | | 清除全文缓存（不传编号 = 全清，详见 [全文抓取](/使用说明/全文抓取)） |
-| `telemetry status\|show\|enable\|disable\|clear\|export` | | 本地阅读遥测**苏暖泉（Sumenia）**的查看/开关/删除/导出（默认关闭，详见 [Telemetry 与隐私](/功能/遥测)） |
-| `--init` / `--config` / `--index` / `--reindex` / `--search` / `--grep` / `--summary` | | AI 相关命令，见 [AI 命令](/使用说明/AI命令) |
+| `--schedule <编号> <表达式>` | | 设置某源更新计划（详见 [更新调度](/使用/调度)）：`30m` / `1h` / `7d` / `daily@10:00` / `weekly@Mon 08:00` / `manual` |
+| `--purge-fulltext [编号]` | | 清除全文缓存（不传编号 = 全清，详见 [全文抓取](/使用/全文)） |
+| `telemetry status\|show\|enable\|disable\|clear\|export` | | 本地阅读遥测**苏暖泉（Sumenia）**的查看/开关/删除/导出（默认关闭，详见 [Telemetry 与隐私](/参考/遥测)） |
+| `--init` / `--config` / `--index` / `--reindex` / `--search` / `--grep` / `--summary` | | AI 相关命令，见 [AI 命令](/使用/AI) |
+| `--insights [--interval]` | | 阅读情况报告：按源呈现阅读事实（打开/读完/完成率/♥🤖点赞/订阅积压）+ 可解释原因（无黑盒评分）；`--insights-interval` 定时提醒。需遥测开启 |
+| `--dedup <scan\|hide-cluster\|hide\|list\|undo>` | | 跨源去重：按段落重合度识别「可能同文」（输出**重复簇**，v1.1.4 起无配对爆炸）；`hide-cluster <代表Id>` 一键隐藏整簇、`hide <hiddenId> <canonicalId>` 单篇隐藏（数据保留）、`undo <key>` 撤销、`list` 查看 |
+| `--policy <action> --feed <编号>` | | Source Policy（v1.1）：`lower_frequency` / `archive` / `tag` / `keep` / `unsubscribe`；规则经你确认（`createdBy: user`），AI 永不自动写 |
+| `--onboarding` | | Onboarding（v1.1）：按领域（AI / 开发 / 科技公司）一键添加推荐源；`templates.json` 可编辑 |
 | `-h` | `--help` | 显示帮助 |
 
+> v1.1 新增：`--dedup`（跨源去重）、`--policy`（Source Policy）、`--insights` / `--insights-interval`（阅读报告）、`--onboarding`（推荐源模板），详见[概念总览](/了解/概念)。
 > 全局参数：`--ignoresafeannouncement`（跳过安全横幅等多余输出，供脚本/AI 使用）、`--lang <代码>`（切换语言，如 `--lang en-US`）。输出一律 UTF-8。
 
 ## 退出码（脚本 / AI 判断成败）

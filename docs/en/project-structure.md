@@ -8,7 +8,8 @@
 │   ├── zh-CN.json      # Simplified Chinese
 │   ├── zh-Moe.json     # Cat-styled Chinese
 │   └── en-US.json
-├── sip-测试报告-2026-08-11.md  # comprehensive test report (51 features + 30+ exception injections + security penetration + stress)
+├── sip-测试报告-2026-08-11.md  # first-round comprehensive test report (51 features + 30+ exception injections + security penetration + stress)
+├── sip-完整测试报告-2026-08-12-最终版.md  # full test report (~230+ tests, overall 8.4/10, three-round iteration v1.0→v1.1→v1.1.4)
 ├── .opencode/skills/   # AI agent skill for using the CLI (teaches AI to call sip)
 │   └── sip-rss/SKILL.md
 ├── readwithhotsoup/    # runtime data directory (auto-created next to the exe on first launch)

@@ -2,9 +2,7 @@
 
 > 让 sip 成为一个「会说话的助手」：通过本地 AI Agent（**OpenClaw**，或用 **Cherry Studio**），把 sip 挂到 QQ、微信、Discord、Telegram 上——你在群里 @ 它，它用 `sip` 的检索/摘要能力，只从你信任的源回答问题。
 >
-> **英文版**：[English](/en/usage/bot-integration.html) · 官方文档：[OpenClaw](https://docs.openclaw.ai) · [Cherry Studio](https://cherry-ai.com)
-
----
+> **英文版**：[English](/en/usage/bot-integration.html) · 官方文档：[OpenClaw](https://docs.openclaw.ai/) · [Cherry Studio](https://cherry-ai.com/)
 
 ## 原理总览
 
@@ -22,8 +20,6 @@
 ```
 
 **核心**：喂给 Agent 三样东西——**系统提示词**、**独立的 `sip.exe`**、以及 **`sip-rss` skill**。Agent 从此只通过 `sip` 检索信息，引用永远来自白名单。
-
----
 
 ## 准备：把 sip 喂给 AI
 
@@ -81,8 +77,6 @@ C:\tools\sip\sip.exe        # Windows
 
 > 把 `<路径>` 换成你的实际 `sip.exe` 路径。
 
----
-
 ## 方式 A：OpenClaw（推荐，原生多平台 bot）
 
 OpenClaw 是本地运行的个人 AI 助手，通过一个 Gateway 连接模型、工具、消息渠道与你的设备。**Telegram、Discord 原生支持**；QQ、微信可通过第三方桥接接入（见下文「QQ/微信」）。
@@ -126,8 +120,6 @@ openclaw dashboard                  # 打开控制台，发条消息验证
 
 > **安全提示**：OpenClaw 默认把不认识的私聊发送者配对后才能通信；工具在宿主机执行。接入多人前务必读一遍 [安全指南](https://docs.openclaw.ai/gateway/security)。`sip` 全本地、只读你订阅的源，把私密配置（AI Key 在系统凭据库）与多人 bot 分开，别暴露 Gateway 公网。
 
----
-
 ## 方式 B：Cherry Studio（桌面助手）
 
 Cherry Studio 是本地桌面 LLM 客户端，支持多模型、MCP 与自定义 Agent/技能。它本身不是 bot 框架，但很适合「本地对话即查即答」。
@@ -137,25 +129,17 @@ Cherry Studio 是本地桌面 LLM 客户端，支持多模型、MCP 与自定义
 3. 让 Agent 能调用 `sip.exe`（配置为命令行工具 / MCP，或直接用 `sip --json` 的 shell 命令）；
 4. 在对话里直接问，它会调用 sip 检索。
 
----
-
 ## 验证示例
 
 接入后，在你的群里发：
 
-```
-@bot 最近两天有哪些值得读的 RSS 更新？
-```
+`@bot 最近两天有哪些值得读的 RSS 更新？`
 
 Agent 会执行 `sip --today --json` / `sip --search` 返回可信摘要并附来源链接。
 
-```
-@bot 帮我查一下 "LLM Agent" 相关的文章
-```
+`@bot 帮我查一下 "LLM Agent" 相关的文章`
 
 Agent 执行 `sip --search "LLM Agent" --json`，只引用你订阅的源。
-
----
 
 ## 常见问题
 

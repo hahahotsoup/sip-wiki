@@ -26,6 +26,7 @@ The left side is a **tree view merging feeds and articles**: feeds are parent no
 | `G` | Toggle "full body / article summary" |
 | `V` | View article versions/change history (only for articles marked `✎`; enter an ID to view an old version's body) |
 | `M` (or the `manage` command) | Open the "feed management page": lists all feeds full-screen, `j/k` to move, `u` update, `a` archive, `r` unarchive, `x` delete, `s` schedule, `d` add feed |
+| `P` (or the `report` / `insights` command) | Reading insights page (per-feed reading facts; requires telemetry enabled) |
 | `C` | Collapse/expand the left sidebar |
 | `H` | Shortcut help |
 | `F2` | About page |
@@ -52,5 +53,10 @@ y               # generate a summary for the currently selected article
 init            # AI config wizard (dialog version)
 index           # vectorize the currently selected feed
 reindex         # clear all vectors and re-vectorize
+dedup           # cross-source dedup (no arg = interactive pick; or dedup scan|list|undo)
+insights        # reading insights (same as P / report)
+insights-interval <7d|30d|off>  # scheduled insights reminder
+telemetry ...   # telemetry management (status/show/enable/disable/clear/export)
+config          # view AI config
 q               # quit
 ```

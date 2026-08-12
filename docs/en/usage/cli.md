@@ -53,7 +53,13 @@ sip --diff 42 v1 v3 --json   # specify two versions, structured output {from, to
 | `--purge-fulltext [id]` | | Clear the full-text cache (no ID = clear all; see [Full-Text Fetch](/en/usage/full-text-fetch)) |
 | `telemetry status\|show\|enable\|disable\|clear\|export` | | View/toggle/delete/export the local reading telemetry **Sumenia** (off by default; see [Telemetry & Privacy](/en/features/telemetry)) |
 | `--init` / `--config` / `--index` / `--reindex` / `--search` / `--grep` / `--summary` | | AI-related commands, see [AI Commands](/en/usage/ai-commands) |
+| `--insights [--interval]` | | Reading insights: per-feed reading facts (opened/finished/completion rate/♥🤖 likes/backlog) + explainable `reasons` (no black-box scores); `--insights-interval` schedules reminders. Requires telemetry enabled |
+| `--dedup <scan\|hide-cluster\|hide\|list\|undo>` | | Cross-source dedup: detects "possibly the same article" by paragraph overlap (outputs **duplicate clusters** since v1.1.4 — no pair explosion); `hide-cluster <representativeId>` hides a whole cluster in one shot (data kept), `hide <hiddenId> <canonicalId>` hides a single article, `undo <key>` restores, `list` views |
+| `--policy <action> --feed <id>` | | Source Policy (v1.1): `lower_frequency` / `archive` / `tag` / `keep` / `unsubscribe`; rules only via your confirmation (`createdBy: user`), AI never auto-writes |
+| `--onboarding` | | Onboarding (v1.1): add recommended feeds by domain (AI / Dev / Tech companies) in one click; `templates.json` is editable |
 | `-h` | `--help` | Show help |
+
+> v1.1 adds: `--dedup` (cross-source dedup), `--policy` (Source Policy), `--insights` / `--insights-interval` (reading insights), `--onboarding` (recommended-feed templates), see [Features Overview](/en/features/).
 
 > Global parameters: `--ignoresafeannouncement` (skip extraneous output like the safety banner, for scripts/AI), `--lang <code>` (switch language, e.g. `--lang en-US`). Output is always UTF-8.
 

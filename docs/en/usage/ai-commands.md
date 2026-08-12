@@ -19,12 +19,12 @@ sip --summary-all                   # generate summaries for all articles withou
 
 | Command | Description |
 |------|------|
-| `--init` | Interactive first-time config: choose an Embedding provider, LLM provider, and enter an API key (auto-degrades to plain input when stdin is redirected, no crash) |
+| `--init` | Interactive first-time config: choose an Embedding provider, LLM provider, and enter an API key. 🔒 **Requires a real interactive terminal** (security): refuses when stdin is redirected (exit code 1) — AI/scripts cannot drive it through a pipe, a human must run it manually |
 | `--config` | Print the current AI config (without secrets) and the config file path |
 | `--index` | Batch-generate embedding vectors for the selected feed's articles |
 | `--reindex` | After changing the embedding model (dimension change), clear old vectors and fully rebuild |
 | `--search <query>` | Semantic search; optional `--feed <id>`, `--threshold 0.7`, `--json`. ⚠️ Performance note: cross-feed search is a full vector scan; prefer `--grep` (SQL LIKE exact match); for semantic expansion use `--feed <id>` to limit to a single feed, or tune `--threshold` to reduce candidates. ⚠️ Full-text vector hits usually score 0.1–0.2 lower than title vectors; when searching for "concepts unique to the body", lower the threshold if results are sparse |
-| `--grep <keyword>` | Full-text search (SQL LIKE, no AI dependency); default outputs "ID + title + hit count + ±50-char snippet", with limits (`--limit N` / `--max-snippets N` / `--json` / `--full`) |
+| `--grep <keyword>` | Full-text search (SQL LIKE, no AI dependency); default outputs "ID + title + hit count + ±50-char snippet", with limits (`--limit N` / `--max-snippets N` / `--json` / `--full`). `%`/`_` are matched literally; when hits fall only in links/HTML attributes (0 occurrences in visible text) it hints "(only matched links/attributes, not counted in visible text)" |
 | `--summary <id>` | Call the LLM to generate a summary for a single article (`--json` structured); `feed:<id>` generates for every article in that feed |
 | `--summary-all` | Generate summaries for all articles whose `Summary` is empty |
 
