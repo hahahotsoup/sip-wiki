@@ -1,0 +1,8 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sip-docs",
+  "compatibility_date": "2026-08-12",
+  "assets": {
+    "directory": "./docs/.vitepress/dist"
+  }
+}
