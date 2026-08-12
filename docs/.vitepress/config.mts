@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { teekConfig } from './teek-config.mts'
+import { generateSitemap } from './sitemap.mts'
 
 export default defineConfig({
   extends: teekConfig,
@@ -9,6 +10,8 @@ export default defineConfig({
   head: [
     ['meta', { name: 'theme-color', content: '#16a34a' }],
   ],
+
+  buildEnd: generateSitemap,
 
   markdown: {
     lineNumbers: true,
