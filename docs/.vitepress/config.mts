@@ -136,6 +136,8 @@ export default defineConfig({
       { text: '指南', link: '/指南/快速开始' },
       { text: '使用说明', link: '/使用说明/命令行' },
       { text: '功能', link: '/功能/' },
+      { text: '概念', link: '/概念' },
+      { text: '更新日志', link: '/更新日志' },
       { text: '项目结构', link: '/项目结构' },
       { text: '测试报告', link: '/测试报告' },
       { text: '关于', link: '/关于' },
@@ -177,6 +179,19 @@ export default defineConfig({
             { text: 'AI 友好', link: '/功能/AI' },
             { text: 'Telemetry 与隐私', link: '/功能/遥测' },
             { text: '规划中', link: '/功能/规划' },
+          ],
+        },
+      ],
+      '/': [
+        {
+          text: '总览',
+          items: [
+            { text: '首页', link: '/' },
+            { text: '概念总览', link: '/概念' },
+            { text: '更新日志', link: '/更新日志' },
+            { text: '项目结构', link: '/项目结构' },
+            { text: '测试报告', link: '/测试报告' },
+            { text: '关于', link: '/关于' },
           ],
         },
       ],
