@@ -1,12 +1,12 @@
 # Test Report
 
-## sip Comprehensive Test Report (2026-08-12 Final)
+## sip Second-Round Test Report (2026-08-12)
 
 **~230+ tests** (three-round iteration summary: v1.0 → v1.1 → v1.1.4) + **automated CLI** + **manual TUI** + **fault injection** + **stress testing** + **security penetration**.
 
 Overall score **8.4 / 10 (A-, excellent)** — from "usable" (7.1) to "trustable" (8.4), three iterations closed the security, stability, and performance short boards.
 
-▶ Full report: [sip Comprehensive Test Report (2026-08-12 Final)](/en/sip-test-report-2026-08-12-final)
+▶ Full report: [sip Second-Round Test Report (2026-08-12)](/en/sip-second-round-test-report-2026-08-12)
 
 ## sip Comprehensive Test Report (2026-08-11)
 

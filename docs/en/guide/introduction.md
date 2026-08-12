@@ -2,11 +2,23 @@
 
 > **—「Taste it. Savor it.」**
 >
-> **Reading is like sipping soup — don't keep glancing into the bowl, close your eyes and savor it first.**
+> **sip: your information, your history, your judgment.**
 
-sip is an information firewall: letting you and your AI only see content you trust.
+sip is a **local-first personal information hub**: it collects content from RSS and other sources, preserves it locally and tracks changes over time, and helps you take control of your information input through search, filtering, and agents.
 
-It is not an algorithm-driven reader, nor a feed meant to make you "scroll more". It is a **local-first transparent information filter and reading assistant** — you specify your sources, sip guards and assists in filtering them while improving the reading experience, so you and your AI agents get answers from a clean, traceable dataset.
+It helps you do five things:
+
+```
+collect → preserve → track → filter → use
+```
+
+- **Collect**: RSS / RSSHub sources
+- **Preserve**: full-text fetching, version snapshots
+- **Track**: what the author changed (Version / Diff)
+- **Filter**: Insights reports, Source Policy rules, cross-source dedup, high-frequency collapsing
+- **Use**: full-text / semantic search, agents / bots, Markdown export
+
+**AI helps you understand information, but never decides its value for you** — the judgment is always yours.
 
 And, shamelessly: [https://blog.hotsouprealm.top/atom.xml](https://blog.hotsouprealm.top/atom.xml)
 Follow the Hot Soup Teahouse. Follow us, thank you. 🐾
@@ -31,6 +43,7 @@ sip's answer to these three problems is simple:
 | **Transparent decisions** | Only see sources you subscribe to, no algorithmic black box; filter rules are simply the feed list you maintain |
 | **Version is truth** | What did the author change? When? sip records it all for you, losing no history |
 | **AI reads a whitelist only** | AI summaries and semantic search rely only on sources you trust, eliminating low-quality citations |
+| **Judgment is yours** | AI helps you understand information but never decides its value for you — every decision (filter, lower frequency, archive) goes through your confirmation |
 | **Out of the box, ultra-light** | Single-file exe, zero dependencies, works on launch; AI features called on demand, never pre-run |
 
 ## What specific problems does it solve?
@@ -69,7 +82,7 @@ After they open sip:
 
 ## Design Boundaries
 
-sip only does two things — **deterministic rules** and **local fact storage**; anything requiring judgment/explanation/conversation is left to agents and users. Today's selection rules for the Hot Soup Teahouse remain fixed and explainable; once enough telemetry data accumulates for personalization and other "intelligence", it will either be implemented as new deterministic rules or live in the agent layer — not in the program.
+sip only does two things — **deterministic rules** and **local fact storage**. Everything you care about (collect, preserve, track, filter, use) is built on top of these two; anything requiring judgment/explanation/conversation is left to agents and users. Today's selection rules for the Hot Soup Teahouse remain fixed and explainable; once enough telemetry data accumulates for personalization and other "intelligence", it will either be implemented as new deterministic rules or live in the agent layer — not in the program.
 
 ## In Closing
 

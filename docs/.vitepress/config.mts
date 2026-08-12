@@ -79,7 +79,7 @@ export default defineConfig({
               text: 'Reference',
               items: [
                 { text: 'Project Structure', link: '/en/project-structure' },
-                { text: 'Test Report (2026-08-12 Final)', link: '/en/sip-test-report-2026-08-12-final' },
+                { text: 'Second-Round Test Report (2026-08-12)', link: '/en/sip-second-round-test-report-2026-08-12' },
                 { text: 'Test Report', link: '/en/test-report' },
                 { text: 'About', link: '/en/about' },
               ],
@@ -205,7 +205,7 @@ export default defineConfig({
           text: '总览',
           items: [
             { text: '首页', link: '/' },
-            { text: '完整测试报告（2026-08-12 最终版）', link: '/sip-测试报告-2026-08-12-最终版' },
+            { text: '第二轮测试报告（2026-08-12）', link: '/sip-第二轮测试报告-2026-08-12' },
             { text: '第一轮测试报告（2026-08-11）', link: '/sip-测试报告-2026-08-11' },
             { text: '项目结构', link: '/项目结构' },
             { text: '测试报告', link: '/测试报告' },

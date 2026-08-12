@@ -1,4 +1,4 @@
-# 🍲 sip Comprehensive Test Report (Final)
+# 🍲 sip Second-Round Test Report
 
 > Coverage period: 2026-08-11 ~ 2026-08-12
 > Tested versions: v1.0 → v1.1 → v1.1.4 (incl. cluster refactor)

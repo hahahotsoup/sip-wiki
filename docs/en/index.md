@@ -3,8 +3,8 @@ layout: home
 
 hero:
   name: sip
-  text: An information firewall
-  tagline: Reading is like sipping soup — don't keep glancing into the bowl, close your eyes and savor it first. — "Taste it. Savor it."
+  text: Your information, your history, your judgment
+  tagline: A local-first personal information hub — collect, preserve, track, filter, use. Five things that put you back in control of your information input.
   actions:
     - theme: brand
       text: Quick Start
@@ -55,7 +55,7 @@ Want to dig deeper: [How sip compares to other readers](/en/guide/competitors) �
 
 ## 📋 Welcome to the Test Report
 
-[sip Comprehensive Test Report (2026-08-12 Final)](/en/sip-test-report-2026-08-12-final) — **~230+ tests** across three iterations (v1.0 → v1.1 → v1.1.4), fault injection, stress testing, security penetration. Overall **8.4/10 (A-)**, 22 defects fixed and re-verified, +696 lines with zero regression. Earlier round: [Comprehensive Test Report (2026-08-11)](/en/sip-test-report-2026-08-11) — 51 functional tests + 30+ boundary/exception injections, all 11 defects fixed in **v1.0** (see [Test Report](/en/test-report)).
+[sip Second-Round Test Report (2026-08-12)](/en/sip-second-round-test-report-2026-08-12) — **~230+ tests** across three iterations (v1.0 → v1.1 → v1.1.4), fault injection, stress testing, security penetration. Overall **8.4/10 (A-)**, 22 defects fixed and re-verified, +696 lines with zero regression. Earlier round: [Comprehensive Test Report (2026-08-11)](/en/sip-test-report-2026-08-11) — 51 functional tests + 30+ boundary/exception injections, all 11 defects fixed in **v1.0** (see [Test Report](/en/test-report)).
 
 > sip is not a product chasing "daily active users" and "time on site". It pursues this:
 >
