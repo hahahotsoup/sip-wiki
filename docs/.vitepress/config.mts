@@ -174,6 +174,8 @@ export default defineConfig({
           items: [
             { text: '快速开始', link: '/上手/快速开始' },
             { text: '实战场景', link: '/上手/实战场景' },
+            { text: '高级用法', link: '/上手/高级' },
+            { text: '从源码构建', link: '/参考/构建' },
           ],
         },
       ],
