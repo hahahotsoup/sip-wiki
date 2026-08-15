@@ -155,6 +155,7 @@ export default defineConfig({
       { text: '参考', link: '/参考/功能', activeMatch: '^/参考/' },
       { text: '项目结构', link: '/项目结构' },
       { text: '测试报告', link: '/测试报告' },
+      { text: '梗百科', link: '/梗百科' },
       { text: '关于', link: '/关于' },
     ],
     sidebar: {
@@ -214,6 +215,7 @@ export default defineConfig({
             { text: '第一轮测试报告（2026-08-11）', link: '/sip-测试报告-2026-08-11' },
             { text: '项目结构', link: '/项目结构' },
             { text: '测试报告', link: '/测试报告' },
+            { text: '梗百科', link: '/梗百科' },
             { text: '关于', link: '/关于' },
           ],
         },
