@@ -78,7 +78,7 @@ After they open sip:
 - Articles with too-short summaries are automatically prompted to fetch the full text, to be read slowly
 - No need to tell truth from falsehood, because the garbage sources are already blocked out
 
-**hahahotsoup note: I'm well aware the TUI has a high learning curve, so once the program matures, Avalonia is on the roadmap.**
+**hahahotsoup note: I'm well aware the TUI has a high learning curve, so a Web UI (sip-web) is now on the roadmap** — manage feeds, read articles, run full-text/semantic search, and view version diffs in the browser, no terminal needed. It is currently **experimental, has no security features, and is for local use only**: [Web UI](/en/usage/web).
 
 ## Design Boundaries
 
