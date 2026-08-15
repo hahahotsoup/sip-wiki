@@ -1,5 +1,14 @@
 # Web UI (sip-web)
 
+> ## ⚠️ Test software notice
+>
+> **This is a test / experimental piece of software. It has NO security features.**
+>
+> - No authentication, no access control, no encryption
+> - Anyone who can reach the service port can read and write your sip data (add/remove feeds, delete articles, fetch, etc.)
+> - Use it only in a local development environment. **Do NOT expose it to the public internet**, do not bind non-loopback addresses, do not run it in shared/untrusted environments
+> - Use at your own risk; the author is not responsible for data loss or leakage
+
 > Don't want to open a terminal? Give sip a local Web UI: manage subscriptions, read articles, full-text / semantic search, Today's Hotsoup, and version diffs right in the browser. It translates **web requests into HTTP calls** — a lightweight HTTP service turns each request into a `sip <command> --json` CLI invocation and returns sip's structured output to the page unchanged.
 >
 > **中文版**：[简体中文](/使用/Web.html) · Repo: [hahahotsoup/sip-webapiextra](https://github.com/hahahotsoup/sip-webapiextra)
@@ -107,12 +116,12 @@ GET    /api/today?refresh=1            Today's Hotsoup
 GET    /api/config                     AI config status
 ```
 
-## Security
+## ⚠️ Known limitations (no security features)
 
-- **Local-first**: listens on `127.0.0.1` by default — data never leaves your machine
-- **Injection-proof**: arguments go to the child process as a list (no shell), commands are whitelisted
-- **Timeouts**: every CLI call has a timeout so nothing hangs forever
-- **Respects sip's safety boundaries**: `sip --init` (API key entry) still requires a real terminal; the Web UI never runs it. Fulltext fetching inherits sip's SSRF protection.
+- **No auth / no authorization**: binding to `127.0.0.1` only means the machine itself can reach it — any process or user on that machine can operate your data through this port
+- **No encryption**: plain HTTP; the Web layer provides no protection at all
+- **No sandboxing**: the translation layer turns requests straight into sip CLI calls; arguments are not semantically validated
+- **Test-only**: not security-audited — do not use in production or on the public internet
 
 ## FAQ
 
