@@ -74,6 +74,7 @@ export default defineConfig({
                 { text: 'Assisted Reading', link: '/en/features/reading' },
                 { text: 'AI Friendly', link: '/en/features/ai' },
                 { text: 'Telemetry & Privacy', link: '/en/features/telemetry' },
+                { text: 'Security Guardian', link: '/en/features/security' },
                 { text: 'Roadmap', link: '/en/features/roadmap' },
               ],
             },
@@ -202,6 +203,7 @@ export default defineConfig({
           items: [
             { text: '功能总览', link: '/参考/功能' },
             { text: '遥测与隐私', link: '/参考/遥测' },
+            { text: '安全', link: '/参考/安全' },
             { text: '规划中', link: '/参考/规划' },
             { text: '从源码构建', link: '/参考/构建' },
             { text: '更新日志', link: '/参考/更新日志' },

@@ -57,7 +57,7 @@ sip --diff 42 v1 v3 --json   # 指定两个版本，结构化输出 {from, to, c
 | `--dedup <scan\|hide-cluster\|hide\|list\|undo>` | | 跨源去重：按段落重合度识别「可能同文」（输出**重复簇**，v1.1.4 起无配对爆炸）；`hide-cluster <代表Id>` 一键隐藏整簇、`hide <hiddenId> <canonicalId>` 单篇隐藏（数据保留）、`undo <key>` 撤销、`list` 查看 |
 | `--policy <action> --feed <编号>` | | Source Policy（v1.1）：`lower_frequency` / `archive` / `tag` / `keep` / `unsubscribe`；规则经你确认（`createdBy: user`），AI 永不自动写 |
 | `--onboarding` | | Onboarding（v1.1）：按领域（AI / 开发 / 科技公司）一键添加推荐源；`templates.json` 可编辑 |
-| `simon status\|level <1\|2\|3>\|export-key <file>\|import-key <file>` | | 安全守护**孟思琳（simon）**：默认开启、无法关闭、只能调节挡位；2=非交互禁破坏性写，3=非交互禁全部写 + 数据加密；**降挡只能在 TUI 命令栏**；密钥自动存系统凭据库（详见 [功能总览·安全守护](/参考/功能#安全守护)） |
+| `simon status\|level <1\|2\|3>\|export-key <file>\|import-key <file>` | | 安全守护**孟思琳（simon）**：默认开启、无法关闭、只能调节挡位；2=非交互禁破坏性写，3=非交互禁全部写 + 数据加密；**降挡只能在 TUI 命令栏**；密钥自动存系统凭据库（详见 [安全](/参考/安全)） |
 | `-h` | `--help` | 显示帮助 |
 
 > v1.1 新增：`--dedup`（跨源去重）、`--policy`（Source Policy）、`--insights` / `--insights-interval`（阅读报告）、`--onboarding`（推荐源模板），详见[概念总览](/了解/概念)。
