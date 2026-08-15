@@ -31,7 +31,7 @@ sip --diff 42 v1 v3 --json   # 指定两个版本，结构化输出 {from, to, c
 
 | 短参数 | 长参数 | 说明 |
 |--------|--------|------|
-| `-l` | `--list` | 列出所有订阅源；带编号则列出该源的文章（`-l --json` / `-l 1 --json` 结构化输出，含健康状态与内容质量）。编号格式 `[列表序号/真实ID]`，`--show/--versions/--summary` 等命令用右边的真实 ID |
+| `-l` | `--list` | 列出所有订阅源；带编号则列出该源的文章（`-l --json` / `-l 1 --json` 结构化输出，含健康状态与内容质量；`-l 1 --limit 20` 限制输出条数）。编号格式 `[列表序号/真实ID]`，`--show/--versions/--summary` 等命令用右边的真实 ID |
 | `-d` | `--download` | 下载新的 RSS 源（URL 可省略 http/https 前缀，自动补全） |
 | `-u` | `--update` | 更新指定订阅源（编号） |
 | `-a` | `--archive` | 归档当前快照（加时间戳） |
@@ -57,6 +57,7 @@ sip --diff 42 v1 v3 --json   # 指定两个版本，结构化输出 {from, to, c
 | `--dedup <scan\|hide-cluster\|hide\|list\|undo>` | | 跨源去重：按段落重合度识别「可能同文」（输出**重复簇**，v1.1.4 起无配对爆炸）；`hide-cluster <代表Id>` 一键隐藏整簇、`hide <hiddenId> <canonicalId>` 单篇隐藏（数据保留）、`undo <key>` 撤销、`list` 查看 |
 | `--policy <action> --feed <编号>` | | Source Policy（v1.1）：`lower_frequency` / `archive` / `tag` / `keep` / `unsubscribe`；规则经你确认（`createdBy: user`），AI 永不自动写 |
 | `--onboarding` | | Onboarding（v1.1）：按领域（AI / 开发 / 科技公司）一键添加推荐源；`templates.json` 可编辑 |
+| `simon status\|level <1\|2\|3>\|export-key <file>\|import-key <file>` | | 安全守护**孟思琳（simon）**：默认开启、无法关闭、只能调节挡位；2=非交互禁破坏性写，3=非交互禁全部写 + 数据加密；**降挡只能在 TUI 命令栏**；密钥自动存系统凭据库（详见 [功能总览·安全守护](/参考/功能#安全守护)） |
 | `-h` | `--help` | 显示帮助 |
 
 > v1.1 新增：`--dedup`（跨源去重）、`--policy`（Source Policy）、`--insights` / `--insights-interval`（阅读报告）、`--onboarding`（推荐源模板），详见[概念总览](/了解/概念)。

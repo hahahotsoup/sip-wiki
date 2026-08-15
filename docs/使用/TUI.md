@@ -56,6 +56,7 @@ reindex         # 清空全部向量并重新向量化
 dedup           # 跨源去重（无参 = 交互选择；或 dedup scan|list|undo）
 insights        # 阅读情况报告（同 P 键 / report）
 insights-interval <7d|30d|off>  # 报告定时提醒
+simon           # 安全守护(孟思琳):simon status / simon level <1|2|3>——降挡只能在这里进行
 telemetry ...   # 遥测管理（status/show/enable/disable/clear/export）
 config          # 查看 AI 配置
 q               # 退出

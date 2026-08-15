@@ -12,7 +12,7 @@ It helps you do five things:
 collect → preserve → track → filter → use
 ```
 
-- **Collect**: RSS / RSSHub sources
+- **Collect**: RSS sources
 - **Preserve**: full-text fetching, version snapshots
 - **Track**: what the author changed (Version / Diff)
 - **Filter**: Insights reports, Source Policy rules, cross-source dedup, high-frequency collapsing
