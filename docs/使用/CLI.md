@@ -57,10 +57,18 @@ sip --diff 42 v1 v3 --json   # 指定两个版本，结构化输出 {from, to, c
 | `--dedup <scan\|hide-cluster\|hide\|list\|undo>` | | 跨源去重：按段落重合度识别「可能同文」（输出**重复簇**，v1.1.4 起无配对爆炸）；`hide-cluster <代表Id>` 一键隐藏整簇、`hide <hiddenId> <canonicalId>` 单篇隐藏（数据保留）、`undo <key>` 撤销、`list` 查看 |
 | `--policy <action> --feed <编号>` | | Source Policy（v1.1）：`lower_frequency` / `archive` / `tag` / `keep` / `unsubscribe`；规则经你确认（`createdBy: user`），AI 永不自动写 |
 | `--onboarding` | | Onboarding（v1.1）：按领域（AI / 开发 / 科技公司）一键添加推荐源；`templates.json` 可编辑 |
+| `ingest --stdin [--origin <url>] [--producer <name>] [--title <t>] [--ttl <days>] [--yes]` | | 把管道输入存为**证据**（v1.2 证据库） |
+| `ingest --url <url> [--ttl <days>] [--yes]` | | 网页直存为 watch 监视（首快照，SSRF 防护） |
+| `ingest --evidence <file\|--stdin>` | | 导入 `sip-evidence-v1` 证据包（schema 校验） |
+| `ingest list [--stale] [--group N]` / `show <id>` / `confirm <id>` / `rm <id> [--yes]` | | 浏览 / 详情 / 核实 / 遗忘（轻存易删） |
+| `ingest refresh [id \| --stale \| --all]` | | 重新抓取保鲜（默认只刷过期的 watch 目标） |
+| `ingest group add <label> [--seed <query>] \| rename <N> <new> \| rm <N>` / `groups` | | 主题分组（需 AI embedding 配置；主题由你定义） |
+| `ingest retrieve <query> [--top N] [--group N]` | | 证据随行检索（原文片段/来源/版本/新鲜度/核实/共识/分级/反转，供 Agent 使用） |
+| `ingest ask <question>` | | 只从你的证据回答——**只摘录、不转述**（quote verbatim, never paraphrase） |
 | `simon status\|level <1\|2\|3>\|export-key <file>\|import-key <file>` | | 安全守护**孟思琳（simon）**：默认开启、无法关闭、只能调节挡位；2=非交互禁破坏性写，3=非交互禁全部写 + 数据加密；**降挡只能在 TUI 命令栏**；密钥自动存系统凭据库（详见 [安全](/参考/安全)） |
 | `-h` | `--help` | 显示帮助 |
 
-> v1.1 新增：`--dedup`（跨源去重）、`--policy`（Source Policy）、`--insights` / `--insights-interval`（阅读报告）、`--onboarding`（推荐源模板），详见[概念总览](/了解/概念)。
+> v1.1 新增：`--dedup`（跨源去重）、`--policy`（Source Policy）、`--insights` / `--insights-interval`（阅读报告）、`--onboarding`（推荐源模板）；v1.2 新增：`ingest`（证据库，详见[概念 · 证据库](/了解/概念#_7-证据库-ingest)）。详见[概念总览](/了解/概念)。
 > 全局参数：`--ignoresafeannouncement`（跳过安全横幅等多余输出，供脚本/AI 使用）、`--lang <代码>`（切换语言，如 `--lang en-US`）。输出一律 UTF-8。
 
 ## 退出码（脚本 / AI 判断成败）

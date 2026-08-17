@@ -58,9 +58,17 @@ sip --diff 42 v1 v3 --json   # specify two versions, structured output {from, to
 | `--dedup <scan\|hide-cluster\|hide\|list\|undo>` | | Cross-source dedup: detects "possibly the same article" by paragraph overlap (outputs **duplicate clusters** since v1.1.4 — no pair explosion); `hide-cluster <representativeId>` hides a whole cluster in one shot (data kept), `hide <hiddenId> <canonicalId>` hides a single article, `undo <key>` restores, `list` views |
 | `--policy <action> --feed <id>` | | Source Policy (v1.1): `lower_frequency` / `archive` / `tag` / `keep` / `unsubscribe`; rules only via your confirmation (`createdBy: user`), AI never auto-writes |
 | `--onboarding` | | Onboarding (v1.1): add recommended feeds by domain (AI / Dev / Tech companies) in one click; `templates.json` is editable |
+| `ingest --stdin [--origin <url>] [--producer <name>] [--title <t>] [--ttl <days>] [--yes]` | | Store piped input as **evidence** (v1.2 evidence library) |
+| `ingest --url <url> [--ttl <days>] [--yes]` | | Store a web page directly as a `watch` target (first snapshot, SSRF-guarded) |
+| `ingest --evidence <file\|--stdin>` | | Import a `sip-evidence-v1` evidence package (schema-validated) |
+| `ingest list [--stale] [--group N]` / `show <id>` / `confirm <id>` / `rm <id> [--yes]` | | Browse / view / verify / forget (light store, easy delete) |
+| `ingest refresh [id \| --stale \| --all]` | | Re-fetch to keep fresh (stale watch targets by default) |
+| `ingest group add <label> [--seed <query>] \| rename <N> <new> \| rm <N>` / `groups` | | Topic grouping (needs AI embedding configured; topics are yours to define) |
+| `ingest retrieve <query> [--top N] [--group N]` | | Evidence retrieval with full context (verbatim excerpts/source/version/freshness/verification/consensus/grade/reversal, for agents) |
+| `ingest ask <question>` | | Answer from your evidence only — **quote, never paraphrase** |
 | `-h` | `--help` | Show help |
 
-> v1.1 adds: `--dedup` (cross-source dedup), `--policy` (Source Policy), `--insights` / `--insights-interval` (reading insights), `--onboarding` (recommended-feed templates), see [Features Overview](/en/features/).
+> v1.1 adds: `--dedup` (cross-source dedup), `--policy` (Source Policy), `--insights` / `--insights-interval` (reading insights), `--onboarding` (recommended-feed templates); v1.2 adds: `ingest` (evidence library). See [Features Overview](/en/features/).
 
 > Global parameters: `--ignoresafeannouncement` (skip extraneous output like the safety banner, for scripts/AI), `--lang <code>` (switch language, e.g. `--lang en-US`). Output is always UTF-8.
 

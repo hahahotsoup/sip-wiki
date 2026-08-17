@@ -27,6 +27,7 @@ Only levels 1 / 2 / 3 exist — **there is no 0 = cannot be disabled**:
 | 3 | Extreme | All CLI calls rejected (sole exception `simon status`), TUI only; **data encryption enabled** |
 
 - Levels can only be raised by scripts — **downgrading only works in the TUI command bar**; the CLI always refuses (`SIMON_LOCKED`) — "孟思琳 won't let herself be weakened by scripts or CLI"
+- The read-only whitelist (allowed at level 2) includes `ingest list/show/retrieve/groups/ask`; `ingest` write commands (`--stdin` / `--url` / `--evidence` / `refresh` / `group` etc.) are blocked together with other non-interactive calls; `ingest --url` shares the same SSRF protection as full-text fetch
 - The authoritative level value lives in the **OS credential store** (editing `sip_settings.json` cannot downgrade), scoped by a hash of the data directory — multiple sip copies on one machine don't affect each other
 - Blocking principle: the CLI (including interactive terminals) is an untrusted channel; the TUI command bar is always a human channel and is never blocked
 - Everything is logged in `readwithhotsoup/simon_events.json` (last 200 entries: `repair_db` / `blocked_cmd` / `level_change` / `key_import`)
@@ -82,7 +83,7 @@ Raising to level 3 automatically runs **full data encryption**; the original pla
 
 ## Quality Assurance
 
-The repo ships **38 process-level black-box test cases** (CLI contract / SSRF matrix / dedup invariants / terminal injection / simon guardian & encryption round-trips) + GitHub Actions CI, auto-regressed on every change; `SimonTests.cs` specifically asserts: "不存在 off = 无法关闭" (there is no off = cannot be disabled).
+The repo ships **71 process-level black-box test cases** (CLI contract / SSRF matrix / dedup invariants / terminal injection / simon guardian & encryption round-trips / ingest) + GitHub Actions CI, auto-regressed on every change; `SimonTests.cs` specifically asserts: "不存在 off = 无法关闭" (there is no off = cannot be disabled).
 
 ---
 

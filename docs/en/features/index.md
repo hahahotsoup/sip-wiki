@@ -8,6 +8,7 @@ sip's features fall into four main areas: **smart archiving**, **assisted readin
 | 📖 Assisted Reading | TUI folder view, immersive reading, full-text fetch, Markdown rendering, today's hot soup | [Go](/en/features/reading) |
 | 🤖 AI Friendly | Full-featured CLI, unified JSON output, semantic search, LLM summaries, structured exit codes | [Go](/en/features/ai) |
 | 🔁 Intake Closed Loop (v1.1) | Cross-source dedup (`--dedup`), Source Policy (`--policy`), reading insights (`--insights`), Onboarding (`--onboarding`) | [below](#intake-closed-loop) |
+| 🚪 Evidence Library (v1.2) | Turn non-RSS info into evidence: store (stdin/URL/evidence packages), organize (semantic dedup + topic groups), track (refresh + change grading ⚪🟡🔴 + reversal detection), use (retrieve / ask) | [below](#evidence-library) |
 | 🕊️ Privacy & Telemetry | Local telemetry Sumenia, off by default, stored locally only | [Go](/en/features/telemetry) |
 | 🔒 Security Guardian | 孟思琳 (simon): on by default, cannot be disabled, level 1/2/3 only; level 3 encrypts all data | [Go](/en/features/security) |
 | ⚡ Million-Scale Performance | FTS5 full-text search, TUI lazy loading, batch transactions, windowed indexes | [below](#million-scale-performance) |
@@ -22,6 +23,17 @@ Since v1.1, sip moves from an "RSS reader" toward a "personal information hub" f
 - **Source Policy (`--policy`)**: stores "your decision" in `source_policy.json` and **applies** it: `lower_frequency` (directly changes the update schedule) / `archive` / `tag` (adds a tag, `-l` shows `#tag`) / `keep` / `unsubscribe` (records a note). **`createdBy` is always `user`, never auto-written by AI** — every rule goes through your confirmation.
 - **Reading insights (`--insights`)**: `status` (technical failures only: normal / ⚠ long-untouched / ✗ failed N times) + `reasons` (a factual list of reasons), with value-judgment phrasing like "consider unsubscribing / consider pruning" removed — **low reading ≠ low value**, no black-box scores. Judgment is left to you.
 - **Onboarding (`--onboarding`)**: add recommended feeds by domain (AI / Dev / Tech companies) in one click, lowering the first-use barrier; `templates.json` is editable.
+
+## Evidence Library
+
+The second door of v1.2「广开言路」: `sip ingest` turns **non-RSS information** (evidence found elsewhere, ordinary web pages, evidence packages) into a local, trackable evidence library — same DB as RSS articles (`Evidence` table in `rss.db`, schema `sip-evidence-v1`). **Store it when you find it; track it once stored; trust it because it's tracked.**
+
+- **Store**: `ingest --stdin` (pipe text in) / `ingest --url <url>` (web page as a `watch` target, SSRF-guarded) / `ingest --evidence <file|--stdin>` (import `sip-evidence-v1` packages, schema-validated)
+- **Organize**: semantic dedup (reuses embeddings, needs `--init` AI setup) + topic groups (`group add <label> [--seed <query>]` / `rename` / `rm`) — topics are yours to define
+- **Track**: version chain + hash + **bi-temporal** (no change, no new version; old content stays readable, never overwritten); `refresh [id | --stale | --all]` re-fetches for freshness; **change grading ⚪polish / 🟡adjust / 🔴reverse** (reversal requires dual verification with stance-flip signal words — presented, never concluded); TTL freshness (watch 7 days / evidence 30 days, `--ttl` overrides)
+- **Use**: `retrieve <query> [--top N] [--group N]` returns evidence with full context (verbatim excerpts/source/version/freshness/verification/consensus/topic/grade/reversal); `ask <question>` answers **from your evidence only — quote verbatim, never paraphrase, never fabricate**; `confirm <id>` verifies, `rm <id>` forgets (light store, easy delete), `list [--stale] [--group N]` browses
+
+Guardian level 2 blocks `ingest` write commands for non-interactive calls (see [Security](/en/features/security)); commands in [CLI](/en/usage/cli).
 
 ## Privacy & Telemetry
 

@@ -8,14 +8,16 @@ Download the latest **single-file executable** from [Releases](https://github.co
 
 | Platform | File |
 |------|------|
-| Windows x64 | `sip-win-x64.exe` |
-| Linux x64 | `sip-linux-x64` |
-| macOS Intel / Apple Silicon | `sip-osx-x64` / `sip-osx-arm64` |
+| Windows x64 | `sip-v1.2.0-win-x64.exe` |
+| Linux x64 | `sip-v1.2.0-linux-x64` |
+| macOS Intel / Apple Silicon | `sip-v1.2.0-osx-x64` / `sip-v1.2.0-osx-arm64` |
+
+> Artifact names carry **version + architecture** (`sip-v<version>-<platform>`, no more overwriting); older releases used names like `sip-win-x64.exe`. First run creates the `readwithhotsoup/` data directory next to the exe.
 
 ```bash
 ./sip.exe            # Windows: enter TUI (creates readwithhotsoup/ data dir on first launch)
 ./sip.exe --help     # or use the CLI directly
-./sip.exe --version  # show the version (since v1.1.4 it also shows the build time, e.g. sip v1.1.4 (built 2026-08-12 18:52))
+./sip.exe --version  # show the version (since v1.1.4 it also shows the build time, e.g. sip v1.2.0 (built 2026-08-17 09:39))
 ```
 
 - **Single file + built-in official translations**: language files are embedded into the exe, auto-restored when the data directory is missing — a single exe works even if that's all you copy

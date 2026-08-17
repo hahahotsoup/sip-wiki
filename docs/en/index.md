@@ -55,7 +55,7 @@ Want to dig deeper: [How sip compares to other readers](/en/guide/competitors) �
 
 ## 📋 Welcome to the Test Report
 
-[sip Second-Round Test Report (2026-08-12)](/en/sip-second-round-test-report-2026-08-12) — **~230+ tests** across three iterations (v1.0 → v1.1 → v1.1.4), fault injection, stress testing, security penetration. Overall **8.4/10 (A-)**, 22 defects fixed and re-verified, +696 lines with zero regression. Earlier round: [Comprehensive Test Report (2026-08-11)](/en/sip-test-report-2026-08-11) — 51 functional tests + 30+ boundary/exception injections, all 11 defects fixed in **v1.0** (see [Test Report](/en/test-report)).
+[sip Second-Round Test Report (2026-08-12)](/en/sip-second-round-test-report-2026-08-12) — **~230+ tests** across three iterations (v1.0 → v1.1 → v1.1.4), fault injection, stress testing, security penetration. Overall **8.4/10 (A-)**, 22 defects fixed and re-verified, +696 lines with zero regression. Since v1.2.0 there are also **71 process-level black-box test cases + GitHub Actions CI**, auto-regressed on every change. Earlier round: [Comprehensive Test Report (2026-08-11)](/en/sip-test-report-2026-08-11) — 51 functional tests + 30+ boundary/exception injections, all 11 defects fixed in **v1.0** (see [Test Report](/en/test-report)).
 
 > sip is not a product chasing "daily active users" and "time on site". It pursues this:
 >
