@@ -1,13 +1,30 @@
-/* sip 全站公告横条：layout-top 插槽渲染，位于导航栏正上方 */
+/* ===== sip 全站公告横条（layout-top 插槽）=====
+ * 关键机制：VitePress/teek 的 fixed 导航栏与侧边栏都按
+ *   top: var(--vp-layout-top-height, 0px) 定位，内容区偏移同理。
+ * 因此把该变量设为横条高度，导航/侧边栏/内容自动整体下移，不再重叠。
+ * 横条自身 sticky + z-index 40（导航 30 / 桌面侧边栏 25 之下方）。
+ */
+:root {
+  --sip-banner-h: 38px;
+  --vp-layout-top-height: var(--sip-banner-h);
+}
+
 .sip-notice-bar {
-  position: relative;
-  z-index: 30;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  box-sizing: border-box;
+  height: var(--sip-banner-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
   background: linear-gradient(90deg, var(--vp-c-brand-3), var(--vp-c-brand-2));
   color: #fff;
   text-align: center;
-  padding: 8px 48px;
+  padding: 0 48px;
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.4;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
@@ -15,10 +32,36 @@
   font-weight: 600;
 }
 
+/* 关闭按钮：横条右侧圆形半透明 */
+.sip-notice-close {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.sip-notice-close:hover {
+  background: rgba(255, 255, 255, 0.32);
+}
+
 @media (max-width: 640px) {
+  :root {
+    --sip-banner-h: 52px; /* 移动端文字换行，横条加高 */
+  }
   .sip-notice-bar {
     font-size: 13px;
-    padding: 6px 16px;
+    padding: 0 16px;
     line-height: 1.5;
   }
 }
