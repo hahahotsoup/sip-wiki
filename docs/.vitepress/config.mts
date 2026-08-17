@@ -1,5 +1,4 @@
 import { defineConfig } from 'vitepress'
-import { AnnouncementPlugin } from 'vitepress-plugin-announcement'
 import { teekConfig } from './teek-config.mts'
 import { generateSitemap } from './sitemap.mts'
 
@@ -11,23 +10,6 @@ export default defineConfig({
   head: [
     ['meta', { name: 'theme-color', content: '#16a34a' }],
   ],
-
-  vite: {
-    plugins: [
-      AnnouncementPlugin({
-        title: '⚡ 开发动态',
-        body: [
-          {
-            type: 'text',
-            content: '鉴于近期 DeepSeek 涨价等一系列因素，开发活动将较大放缓——更新节奏会变慢，敬请理解。',
-          },
-        ],
-        footer: [
-          { type: 'button', content: '了解 sip', link: '/了解/介绍' },
-        ],
-      }),
-    ],
-  },
 
   buildEnd: generateSitemap,
 

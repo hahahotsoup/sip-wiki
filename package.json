@@ -13,8 +13,5 @@
     "vitepress": "^1.6.4",
     "vitepress-theme-teek": "^1.6.2",
     "wrangler": "3.114.17"
-  },
-  "dependencies": {
-    "vitepress-plugin-announcement": "^0.1.9"
   }
 }
