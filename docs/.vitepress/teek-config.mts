@@ -12,6 +12,29 @@ export const teekConfig = defineTeekConfig({
   vpHome: true,
   pageStyle: 'default',
 
+  // 全局公告：鉴于近期 DeepSeek 涨价等一系列因素，开发活动将较大放缓
+  // useStorage: false —— 公告组件在 SSR 阶段访问 localStorage 会报 ReferenceError，且公告本就该每次访问都可见
+  notice: {
+    enabled: true,
+    title: '⚡ 鉴于近期 DeepSeek 涨价等一系列因素，开发活动将较大放缓——更新节奏会变慢，敬请理解',
+    initOpen: true,
+    duration: 0,
+    reopen: true,
+    useStorage: false,
+    twinkle: true,
+    position: 'top',
+    noticeStyle: `
+.tk-notice {
+  border: 1px solid var(--vp-c-brand-1);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+.tk-notice .title {
+  font-weight: 600;
+}
+`,
+  },
+
   author: {
     name: 'sip',
   },
