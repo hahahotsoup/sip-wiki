@@ -4,6 +4,21 @@ import 'vitepress-theme-teek/index.css'
 import './notice-bar.css'
 import NoticeBar from './NoticeBar.vue'
 
+if (typeof window !== 'undefined') {
+  const _pushState = history.pushState.bind(history)
+  history.pushState = function (state: any, title: string, url?: string | URL | null) {
+    if (url) {
+      const cur = new URL(location.href)
+      const next = new URL(url, location.href)
+      if (cur.pathname === next.pathname && cur.search === next.search) {
+        history.replaceState(state, title, url)
+        return
+      }
+    }
+    _pushState(state, title, url)
+  }
+}
+
 export default {
   extends: Teek,
   // 全站公告大横条：挂在 layout-top 插槽（导航栏正上方）
