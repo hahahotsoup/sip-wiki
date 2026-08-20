@@ -1,7 +1,7 @@
 # Project Structure
 
 ```
-├── sip.csproj            # project file (net10.0, version v1.4.0)
+├── sip.csproj            # project file (net10.0, version v1.2.2)
 ├── RssReader.cs          # main program: CLI entry / subscriptions / reading / search / AI
 ├── Tui.cs                # TUI (folder view, immersive reading, command bar)
 ├── Sumenia.cs            # telemetry service (Sumenia, off by default, separate DB)

@@ -74,7 +74,7 @@ sip --diff 42 v1 v3 --json   # specify two versions, structured output {from, to
 | `--diff <id> [--semantic]` | | Semantic diff showing distance and change grade (v1.4) |
 | `-h` | `--help` | Show help |
 
-> v1.1 adds: `--dedup` (cross-source dedup), `--policy` (Source Policy), `--insights` / `--insights-interval` (reading insights), `--onboarding` (recommended-feed templates); v1.2 adds: `ingest` (evidence library); v1.3 adds: `ingest tree` (tree comments), `ingest tag` (multi-tag); v1.4 adds: `ingest stats` (stats), `ingest cleanup` (cleanup), `ingest watch` (web monitoring), `--diff --semantic` (semantic diff). See [Features Overview](/en/features/).
+> v1.1 adds: `--dedup` (cross-source dedup), `--policy` (Source Policy), `--insights` / `--insights-interval` (reading insights), `--onboarding` (recommended-feed templates); v1.2 adds: `ingest` (evidence library); v1.2.2 adds: `ingest tree` (tree comments), `ingest tag` (multi-tag), `ingest stats` (stats), `ingest cleanup` (cleanup), `ingest watch` (web monitoring), `--diff --semantic` (semantic diff). See [Features Overview](/en/features/).
 
 > Global parameters: `--ignoresafeannouncement` (skip extraneous output like the safety banner, for scripts/AI), `--lang <code>` (switch language, e.g. `--lang en-US`). Output is always UTF-8.
 
