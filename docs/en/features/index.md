@@ -9,6 +9,8 @@ sip's features fall into four main areas: **smart archiving**, **assisted readin
 | 🤖 AI Friendly | Full-featured CLI, unified JSON output, semantic search, LLM summaries, structured exit codes | [Go](/en/features/ai) |
 | 🔁 Intake Closed Loop (v1.1) | Cross-source dedup (`--dedup`), Source Policy (`--policy`), reading insights (`--insights`), Onboarding (`--onboarding`) | [below](#intake-closed-loop) |
 | 🚪 Evidence Library (v1.2) | Turn non-RSS info into evidence: store (stdin/URL/evidence packages), organize (semantic dedup + topic groups), track (refresh + change grading ⚪🟡🔴 + reversal detection), use (retrieve / ask) | [below](#evidence-library) |
+| 🌳 Tree Comments + Multi-tag (v1.3) | Tree-structured comments (FragmentId + recursive CTE), multi-tag system (Tags + EvidenceTags many-to-many) | [below](#tree-comments-and-multi-tag-v13) |
+| 🧹 Data Checkup + Web Monitoring (v1.4) | Evidence stats (stats), stale cleanup (cleanup), web monitoring (watch), semantic diff (--semantic) | [below](#data-checkup-and-web-monitoring-v14) |
 | 🕊️ Privacy & Telemetry | Local telemetry Sumenia, off by default, stored locally only | [Go](/en/features/telemetry) |
 | 🔒 Security Guardian | 孟思琳 (simon): on by default, cannot be disabled, level 1/2/3 only; level 3 encrypts all data | [Go](/en/features/security) |
 | ⚡ Million-Scale Performance | FTS5 full-text search, TUI lazy loading, batch transactions, windowed indexes | [below](#million-scale-performance) |
@@ -34,6 +36,26 @@ The second door of v1.2「广开言路」: `sip ingest` turns **non-RSS informat
 - **Use**: `retrieve <query> [--top N] [--group N]` returns evidence with full context (verbatim excerpts/source/version/freshness/verification/consensus/topic/grade/reversal); `ask <question>` answers **from your evidence only — quote verbatim, never paraphrase, never fabricate**; `confirm <id>` verifies, `rm <id>` forgets (light store, easy delete), `list [--stale] [--group N]` browses
 
 Guardian level 2 blocks `ingest` write commands for non-interactive calls (see [Security](/en/features/security)); commands in [CLI](/en/usage/cli).
+
+## Tree Comments and Multi-tag (v1.3)
+
+v1.3「Tree Comments + Multi-tag」: evidence organization becomes more flexible, tree structure at a glance.
+
+- **Tree Comments**: `sip ingest tree <id>` views tree-structured comments (FragmentId field + recursive CTE queries), supports `--depth` control
+- **Multi-tag System**: Tags + EvidenceTags many-to-many associations
+  - `sip ingest tag list` lists all tags
+  - `sip ingest tag add <evidenceId> <tagName>` adds tag to evidence
+  - `sip ingest tag rm <evidenceId> <tagName>` removes tag from evidence
+  - `sip ingest list --tag <tagName>` filters evidence by tag
+- **Evidence Table Extension**: new fields including FragmentId, Platform, ContentId, Author, CanonicalUrl, Context, Snapshot, Note, WatchEnabled, WatchInterval, WatchLastCheckedAt, WatchLastHash
+
+## Data Checkup and Web Monitoring (v1.4)
+
+v1.4「Data Checkup + Web Monitoring」: evidence library easier to maintain and track.
+
+- **Data Checkup**: `sip ingest stats` one-line summary (total evidence, versions, modified, reversed, topics, tags, new today); `sip ingest cleanup --stale` cleans stale evidence — ViewCount ≥ 3 or viewed within 7 days auto-kept, `--dry-run` previews deletion, `--json` outputs machine-readable report
+- **Web Monitoring**: `sip ingest watch add <id>` marks evidence as monitoring target (minimum 5 min interval); `watch list` lists all monitoring targets; `watch refresh [id] [--all]` manually refreshes monitored content (no auto-fetch, needs cron配合)
+- **Semantic Diff**: `sip --diff <id> --semantic` shows semantic distance (0-1, lower = more similar) and change grade (⚪polish/🟡adjust/🔴reverse)
 
 ## Privacy & Telemetry
 

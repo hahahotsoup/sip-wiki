@@ -1,12 +1,13 @@
 # Project Structure
 
 ```
-├── sip.csproj            # project file (net10.0, version v1.2.0)
+├── sip.csproj            # project file (net10.0, version v1.4.0)
 ├── RssReader.cs          # main program: CLI entry / subscriptions / reading / search / AI
 ├── Tui.cs                # TUI (folder view, immersive reading, command bar)
 ├── Sumenia.cs            # telemetry service (Sumenia, off by default, separate DB)
 ├── simon.cs              # security guardian & data encryption (孟思琳, on by default, cannot be disabled)
 ├── Ingest.cs             # evidence library (ingest, v1.2「广开言路」)
+├── AbyssCat.cs           # AbyssCat module (not enabled)
 ├── publish.ps1           # single-file packaging script (win/linux/mac platforms)
 ├── languages/            # default language files (copied next to the exe at build/publish time, also embedded as a fallback)
 │   ├── zh-CN.json        # Simplified Chinese
@@ -14,7 +15,7 @@
 │   └── en-US.json
 ├── prompts/              # agent persona prompts (Sumenia sumenia.md / sumenia.en.md)
 ├── tools/                # dev tools (language key sync add-lang-keys, benchmarks bench-gen / bench-run)
-├── tests/Sip.Tests/      # 71 process-level black-box test cases (CLI contract / SSRF matrix / dedup invariants / terminal injection / simon / ingest)
+├── tests/Sip.Tests/      # 97 process-level black-box test cases (CLI contract / SSRF matrix / dedup invariants / terminal injection / simon / ingest / tree / tags / watch / semantic-diff)
 ├── .github/workflows/    # GitHub Actions CI (build + test + publish smoke)
 ├── .opencode/skills/     # AI agent skill for using the CLI (teaches AI to call sip)
 │   └── sip-rss/SKILL.md  # + 高级用户手册.md (agent contract, simon level discipline)

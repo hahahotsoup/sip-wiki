@@ -7,3 +7,5 @@ The following capabilities are in the design but **not in the current version** 
 - 📖 **System TTS reading** (Windows/macOS/Linux native voices) + **author audio priority** (detect RSS audio attachments, prefer playing the original sound)
 - 📖 **Sip Today personalization**: v1 is rule-based selection; once Sumenia accumulates enough behavioral data, evolve toward personalized ranking explaining "why this was recommended"
 - ✅ **WebUI / HTTP gateway** (experimental sip-web shipped): a separate program maps sip's CLI capability to HTTP — manage feeds, read articles, search, and view diffs in the browser, lowering the TUI entry barrier. **Currently test-grade: no security features, local use only** — see [Web UI](/en/usage/web)
+- ✅ **Tree comments + Multi-tag** (shipped in v1.3): `sip ingest tree` views tree-structured comments, `sip ingest tag` manages multi-tag system — see [Features Overview](/en/features/)
+- ✅ **Data checkup + Web monitoring** (shipped in v1.4): `sip ingest stats` one-line summary, `sip ingest cleanup --stale` cleans stale evidence, `sip ingest watch` web monitoring, `sip --diff --semantic` semantic diff — see [Features Overview](/en/features/)

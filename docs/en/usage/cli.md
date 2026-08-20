@@ -61,14 +61,20 @@ sip --diff 42 v1 v3 --json   # specify two versions, structured output {from, to
 | `ingest --stdin [--origin <url>] [--producer <name>] [--title <t>] [--ttl <days>] [--yes]` | | Store piped input as **evidence** (v1.2 evidence library) |
 | `ingest --url <url> [--ttl <days>] [--yes]` | | Store a web page directly as a `watch` target (first snapshot, SSRF-guarded) |
 | `ingest --evidence <file\|--stdin>` | | Import a `sip-evidence-v1` evidence package (schema-validated) |
-| `ingest list [--stale] [--group N]` / `show <id>` / `confirm <id>` / `rm <id> [--yes]` | | Browse / view / verify / forget (light store, easy delete) |
+| `ingest list [--stale] [--group N] [--tag <tag>]` / `show <id>` / `confirm <id>` / `rm <id> [--yes]` | | Browse / view / verify / forget (light store, easy delete); `--tag` filters by tag |
 | `ingest refresh [id \| --stale \| --all]` | | Re-fetch to keep fresh (stale watch targets by default) |
 | `ingest group add <label> [--seed <query>] \| rename <N> <new> \| rm <N>` / `groups` | | Topic grouping (needs AI embedding configured; topics are yours to define) |
 | `ingest retrieve <query> [--top N] [--group N]` | | Evidence retrieval with full context (verbatim excerpts/source/version/freshness/verification/consensus/grade/reversal, for agents) |
 | `ingest ask <question>` | | Answer from your evidence only — **quote, never paraphrase** |
+| `ingest tree <id> [--depth N]` | | View tree-structured comments (v1.3) |
+| `ingest tag list` / `tag add <id> <tag>` / `tag rm <id> <tag>` | | Multi-tag management (v1.3) |
+| `ingest stats` | | One-line evidence library summary (v1.4) |
+| `ingest cleanup --stale [--min-views N] [--dry-run] [--yes]` | | Clean stale evidence (v1.4) |
+| `ingest watch add <id> [--interval <min>]` / `watch rm <id>` / `watch list` / `watch refresh [id] [--all]` | | Web monitoring (v1.4) |
+| `--diff <id> [--semantic]` | | Semantic diff showing distance and change grade (v1.4) |
 | `-h` | `--help` | Show help |
 
-> v1.1 adds: `--dedup` (cross-source dedup), `--policy` (Source Policy), `--insights` / `--insights-interval` (reading insights), `--onboarding` (recommended-feed templates); v1.2 adds: `ingest` (evidence library). See [Features Overview](/en/features/).
+> v1.1 adds: `--dedup` (cross-source dedup), `--policy` (Source Policy), `--insights` / `--insights-interval` (reading insights), `--onboarding` (recommended-feed templates); v1.2 adds: `ingest` (evidence library); v1.3 adds: `ingest tree` (tree comments), `ingest tag` (multi-tag); v1.4 adds: `ingest stats` (stats), `ingest cleanup` (cleanup), `ingest watch` (web monitoring), `--diff --semantic` (semantic diff). See [Features Overview](/en/features/).
 
 > Global parameters: `--ignoresafeannouncement` (skip extraneous output like the safety banner, for scripts/AI), `--lang <code>` (switch language, e.g. `--lang en-US`). Output is always UTF-8.
 

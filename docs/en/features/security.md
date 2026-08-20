@@ -83,7 +83,7 @@ Raising to level 3 automatically runs **full data encryption**; the original pla
 
 ## Quality Assurance
 
-The repo ships **71 process-level black-box test cases** (CLI contract / SSRF matrix / dedup invariants / terminal injection / simon guardian & encryption round-trips / ingest) + GitHub Actions CI, auto-regressed on every change; `SimonTests.cs` specifically asserts: "不存在 off = 无法关闭" (there is no off = cannot be disabled).
+The repo ships **97 process-level black-box test cases** (CLI contract / SSRF matrix / dedup invariants / terminal injection / simon guardian & encryption round-trips / ingest / tree / tags / watch / semantic-diff) + GitHub Actions CI, auto-regressed on every change; `SimonTests.cs` specifically asserts: "不存在 off = 无法关闭" (there is no off = cannot be disabled).
 
 ---
 
